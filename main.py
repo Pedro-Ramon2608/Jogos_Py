@@ -1,4 +1,6 @@
 from rich import print
+from Jogos.Adivinhe import Adivinhe_numero
+from Jogos.Ped_Pap_Tes import Pedra_Papel_Tesoura
 
 while True:
     opcao = int(input(("""Qual Jogo você deseja jogar?
