@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block titulo %}
+    <title>Jogos Py</title>
+    {% endblock %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+</head>
+<body>
+    
+    {% block conteudo %}
+    <header>
+        <h1>Seja bem-vindo aos JogosPY</h1>
+    </header>
+
+    <div class="box-list">
+        <div class="lista-jogos">
+            <h3>Lista de Jogos</h3>
+            <p>Clique em cima do jogo desejado.</p>
+                <ol>
+                    <a href="{{ url_for('ped_pap_tes') }}">
+                        <li>Pedra, Papel e Tesoura</li>
+                    </a>
+                    <a href="{{ url_for('adivinhe_num') }}">
+                        <li>Adivinhe o Número</li>
+                    </a>
+                </ol>
+        </div> 
+    </div>
+    {% endblock %}
+
+    <footer>
+        <p>&copy; NinjaPY</p>
+    </footer>
+</body>
+</html>

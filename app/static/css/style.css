@@ -1,0 +1,96 @@
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+.box-list {
+    display: flex;
+    justify-content: center;
+}
+
+.lista-jogos {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(2, 95, 182);
+    box-shadow: 10px 10px rgba(2, 95, 182, 0.664);
+    width: 250px;
+}
+
+.box-escolha {
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 20px;
+    width: 300px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+select {
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #3b82f6;
+
+    background-color: #111827;
+    color: white;
+}
+
+button {
+    padding: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: linear-gradient(135deg, #3b82f6, #9333ea);
+
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+.home {
+    width: 50px;
+    height: 20px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 5px 3px rgba(255, 255, 255, 0.685);
+    display: flex;
+    justify-content: center;
+}
+
+.btn-home {
+    color: #333;
+}
