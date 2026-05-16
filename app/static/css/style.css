@@ -21,9 +21,10 @@ footer {
     text-align: center;
 }
 
-.box-list {
+.box-flex {
     display: flex;
     justify-content: center;
+    padding: 40px;
 }
 
 .lista-jogos {
@@ -46,12 +47,6 @@ footer {
     gap: 15px;
 
     box-shadow: 0 10px 30px 5px red;
-}
-
-.result {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
 }
 
 .box-result {
