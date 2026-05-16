@@ -1,15 +1,18 @@
 {% extends 'index.html' %}
 
 {% block conteudo %}
-    <h2>Vamos jogar: Advinhe o Número</h2>
+    <nav>
+        <div class="home">
+            <a href="{{ url_for('jogos_py') }}" class="btn-home">Home</a>
+        </div>
+    </nav>
+    <header>
+        <h2>Vamos jogar: Advinhe o Número</h2>
+    </header>
     <p>Prepare-se para jogar!</p>
     <ol>
         <li>Pedra</li>
         <li>Papel</li>
         <li>Tesoura</li>
     </ol>
-
-    <div class="home">
-        <a href="{{ url_for('jogos_py') }}" class="btn-home">Home</a>
-    </div>
 {% endblock %}

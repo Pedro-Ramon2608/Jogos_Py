@@ -1,6 +1,11 @@
 {% extends 'index.html' %}
 
 {% block conteudo %}
+    <nav>
+        <div class="home">
+            <a href="{{ url_for('jogos_py') }}" class="btn-home">Home</a>
+        </div>
+    </nav>
     <header>
         <h2>Vamos jogar: Pedra, Papel e Tesoura</h2>
     </header>
@@ -22,13 +27,12 @@
 
     {% if resultado %}
     <div class="result">
-        <p>Sua Escolha: <strong>{{ usuario }}</strong></p>
-        <p>Escolha do Computador: <strong>{{ computador }}</strong></p>
-        <h3>{{ resultado }}</h3>
+        <div class="box-result">
+            <p>Sua Escolha: <strong>{{ usuario }}</strong></p>
+            <p>Escolha do Computador: <strong>{{ computador }}</strong></p>
+            <h3>{{ resultado }}</h3>
+        </div>
     </div>
     {% endif %}
 
-    <div class="home">
-        <a href="{{ url_for('jogos_py') }}" class="btn-home">Home</a>
-    </div>
 {% endblock %}
