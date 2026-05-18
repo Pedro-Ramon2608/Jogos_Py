@@ -1,11 +1,8 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 {% block conteudo %}
-    <nav>
-        <div class="home">
-            <a href="{{ url_for('jogos_py') }}" class="btn-home">Home</a>
-        </div>
-    </nav>
+    {% include 'navbar.html' %}
+
     <header>
         <h2>Vamos jogar: Pedra, Papel e Tesoura</h2>
     </header>

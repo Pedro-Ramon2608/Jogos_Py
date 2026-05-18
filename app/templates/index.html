@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block titulo %}
-    <title>Jogos Py</title>
-    {% endblock %}
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
-</head>
-<body>
+{% extends 'base.html' %}
     
-    {% block conteudo %}
+{% block conteudo %}
     <header>
         <h1>Seja bem-vindo aos JogosPY</h1>
     </header>
@@ -31,10 +19,4 @@
                 </ol>
         </div> 
     </div>
-    {% endblock %}
-
-    <footer>
-        <p>&copy; NinjaPY</p>
-    </footer>
-</body>
-</html>
+{% endblock %}
