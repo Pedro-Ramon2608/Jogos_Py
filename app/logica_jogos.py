@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 
 def rodar_ppt(escolha_usuario):
     # Opções do computador
@@ -18,3 +18,12 @@ def rodar_ppt(escolha_usuario):
         resultado = "Computador Ganhou!"
 
     return escolha_usuario, escolha_computador, resultado
+
+def rodar_adivinhe_num(numero_usuario):
+    # Computador escolhe um número aleatório entre 0 e 100
+    escolha_computador = randint(0, 100)
+    resultado = ""
+    numero_usuario = int(numero_usuario) # Converte a entrada do usuário para inteiro
+
+    # Verificação do Resultado
+    return numero_usuario, resultado

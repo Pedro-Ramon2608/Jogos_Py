@@ -6,10 +6,25 @@
     <header>
         <h2>Vamos jogar: Advinhe o Número</h2>
     </header>
-    <p>Prepare-se para jogar!</p>
-    <ol>
-        <li>Pedra</li>
-        <li>Papel</li>
-        <li>Tesoura</li>
-    </ol>
+
+    <div class="box-flex">
+        <div class="box-escolha">
+            <h2>Prepare-se para jogar!</h2>
+            <p>Escolha um número entre 0 e 100:</p>
+            <form action="" method="POST">
+                <input type="number" name="numero" min="0" max="100" required>
+                <button type="submit">Jogar</button>
+            </form>
+        </div>
+    </div>
+
+    {% if resultado %}
+    <div class="box-flex">
+        <div class="box-result">
+            <p>Sua Escolha: <strong>{{ usuario }}</strong></p>
+            <h3>{{ resultado }}</h3>
+        </div>
+    </div>
+    {% endif %}
+
 {% endblock %}

@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, url_for, request
-from app.logica_jogos import rodar_ppt
+from app.logica_jogos import rodar_ppt, rodar_adivinhe_num
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -26,4 +26,13 @@ def ped_pap_tes():
 
 @app.route("/jogo:advinhenumero", methods=["GET", "POST"])
 def adivinhe_num():
-    return render_template("adivinhe_num.html")
+    resultado = None
+    escolha_usuario = None
+
+    if request.method == "POST":
+        numero_usuario = request.form.get("numero") # Número escolhido pelo usuário
+
+        # Chamada da função do adivinhe o número, do arquivo logica_jogos.py
+        escolha_usuario, resultado = rodar_adivinhe_num(numero_usuario)
+        
+    return render_template("adivinhe_num.html", usuario=escolha_usuario, resultado=resultado)
