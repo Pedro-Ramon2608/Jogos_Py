@@ -8,19 +8,19 @@
     </header>
 
     <div class="box-flex">
-        <div class="box-escolha">
+        <div class="box-escolhanum">
             <h2>Prepare-se para jogar!</h2>
             <p>Escolha um número entre 0 e 100:</p>
             <form action="" method="POST">
-                <input type="number" name="numero" min="0" max="100" required>
+                <input type="number" name="numero" min="0" max="100" required >
                 <button type="submit">Jogar</button>
             </form>
         </div>
     </div>
 
-    {% if resultado %}
+    {% if resultado is not none %}
     <div class="box-flex">
-        <div class="box-result">
+        <div class="box-resultnum">
             <p>Sua Escolha: <strong>{{ usuario }}</strong></p>
             <h3>{{ resultado }}</h3>
         </div>
