@@ -10,6 +10,8 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='imagens/favicon-branca.ico')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+    {% block link %}
+    {% endblock %}
 </head>
 <body>
     

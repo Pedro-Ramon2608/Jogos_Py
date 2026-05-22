@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/jogos.css') }}">
+{% endblock %}
+
 {% block conteudo %}
     {% include 'navbar.html' %}
 
@@ -8,7 +12,7 @@
     </header>
 
     <div class="box-flex">
-        <div class="box-escolha">
+        <div class="box-ppt">
             <h2>Prepare-se para jogar!</h2>
             <form action="" method="POST">
                 <select name="escolha">
@@ -24,7 +28,7 @@
 
     {% if resultado %}
     <div class="box-flex">
-        <div class="box-result">
+        <div class="box-ppt">
             <p>Sua Escolha: <strong>{{ usuario }}</strong></p>
             <p>Escolha do Computador: <strong>{{ computador }}</strong></p>
             <h3>{{ resultado }}</h3>
