@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/jogos.css')}}">
+{% endblock %}
+
+{% block conteudo %}
+    {% include 'navbar.html' %}
+    
+    
+    <header>
+        <h2>Vamos jogar: Forca</h2>
+    </header>
+
+    <div class="box-flex">
+        <div class="box-ppt">
+            <h2>Prepare-se para jogar!</h2>
+            <p>Primeiro, escolha a categoria que você deseja jogar:</p>
+            <form action="" method="POST">
+                <select name="categoria">
+                    <option value="" disabled selected>&gt; Selecione a Opção &lt;</option>
+                    <option value="anime">Anime</option>
+                    <option value="filme">Filme</option>
+                    <option value="serie">Série</option>
+                    <option value="desenho">Desenho</option>
+                    <option value="jogo">Jogo</option>
+                    <option value="comida">Comida</option>
+                    <option value="fruta">Fruta</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    {% if resultado %}
+    <div class="box-flex">
+        <div class="box-ppt">
+            <h3>{{ resultado }}</h3>
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

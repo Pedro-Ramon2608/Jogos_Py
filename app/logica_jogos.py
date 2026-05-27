@@ -29,3 +29,7 @@ def rodar_adivinhe_num(numero_usuario, escolha_computador):
         resultado = f"Rapaz, se você tentasse um {numero_usuario} + x, talvez você acertasse..."
 
     return numero_usuario, resultado
+
+def rodar_forca(palavra_computador, letra_usuario):
+    # Lógica do funcionamento da forca
+    pass

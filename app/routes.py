@@ -1,7 +1,8 @@
 from app import app
-from flask import render_template, url_for, request, session
+from flask import render_template, url_for, request, session, redirect
 from app.logica_jogos import rodar_ppt, rodar_adivinhe_num
-from random import randint
+from app.auxiliares import listaPalavras
+from random import randint, choice
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -50,3 +51,25 @@ def adivinhe_num():
             session.pop("numero_secreto", None)
         
     return render_template("adivinhe_num.html", usuario=escolha_usuario, resultado=resultado)
+
+@app.route("/jogo-forca", methods=["GET", "POST"])
+def jogo_da_forca():
+    resultado = None
+    # Recebe escolha da categoria
+    if request.method == "POST":
+        categoria = request.form.get("categoria") # anime, filme, serie, desenho, jogo, comida, fruta
+        
+        # Escolha da lista de palavras de acordo com a categoria
+        lista = listaPalavras(categoria)
+
+        # Escolha da palavra dentre as opções da lista
+        palavra = choice(lista)
+
+        # Redireciona para a página do jogo já com a categoria e a palavra
+        return redirect(url_for("jogar_forca"))
+
+    return render_template("forca.html")
+
+@app.route("/jogo-forca/jogar", methods=["GET", "POST"])
+def jogar_forca():
+    return render_template("jogar_forca.html")
