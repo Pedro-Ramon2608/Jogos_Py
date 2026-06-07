@@ -54,16 +54,21 @@ def adivinhe_num():
 
 @app.route("/jogo-forca", methods=["GET", "POST"])
 def jogo_da_forca():
-    resultado = None
     # Recebe escolha da categoria
     if request.method == "POST":
         categoria = request.form.get("categoria") # anime, filme, serie, desenho, jogo, comida, fruta
         
-        # Escolha da lista de palavras de acordo com a categoria
+        # Escolha a lista de palavras de acordo com a categoria
         lista = listaPalavras(categoria)
 
-        # Escolha da palavra dentre as opções da lista
-        palavra = choice(lista)
+        # Escolha da palavra secreta dentre as opções da lista
+        palavra_secreta = choice(lista)
+
+        # Salvamento de tudo que o jogo precisa dentro de session
+        session["forca_categoria"] = categoria
+        session["forca_palavra"] = palavra_secreta
+        session["forca_letras_chutadas"] = [] # Guarda palavras que o usuário ja chutou
+        session["forca_tentativas_restantes"] = 6
 
         # Redireciona para a página do jogo já com a categoria e a palavra
         return redirect(url_for("jogar_forca"))
@@ -72,4 +77,18 @@ def jogo_da_forca():
 
 @app.route("/jogo-forca/jogar", methods=["GET", "POST"])
 def jogar_forca():
+    # Se o usuário acessar a rota sem escolher a categoria, ele volta
+    if "forca_categoria" not in session:
+        return redirect(url_for("jogo_da_forca"))
+    
+    # Recupera os dados da session
+    categoria = session["forca_categoria"]
+    palavra = session["forca_palavra"]
+    letras_chutadas = session["forca_letras_chutadas"]
+    tentativas = session["forca_tentativas_restantes"]
+
+    # Recebe as letras 
+    if request.method == "POST":
+        letra = request.form.get("letra")
+
     return render_template("jogar_forca.html")

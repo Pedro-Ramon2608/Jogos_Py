@@ -6,6 +6,27 @@
 
 {% block conteudo %}
     {% include 'navbar.html' %}
+    <a href="{{ url_for('jogo_da_forca') }}" class="btn-home">Voltar</a>
+    <h2>Vamos jogar!</h2>
 
+    <div class="box-flex">
+        <div class="box-ppt">
+            <h2>Prepare-se para jogar!</h2>
+            <form action="" method="POST">
+                <input type="text" value="letra">
+                <button type="submit">Jogar</button>
+            </form>
+        </div>
+    </div>
+
+    {% if resultado %}
+    <div class="box-flex">
+        <div class="box-ppt">
+            <p>Sua Escolha: <strong>{{ usuario }}</strong></p>
+            <p>Escolha do Computador: <strong>{{ computador }}</strong></p>
+            <h3>{{ resultado }}</h3>
+        </div>
+    </div>
+    {% endif %}
     
 {% endblock %}
