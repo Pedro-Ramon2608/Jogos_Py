@@ -67,6 +67,7 @@ def jogo_da_forca():
         # Salvamento de tudo que o jogo precisa dentro de session
         session["forca_categoria"] = categoria
         session["forca_palavra"] = palavra_secreta
+        session["forca_letras_descobertas"] = ["_"] * len(palavra_secreta)
         session["forca_letras_chutadas"] = [] # Guarda palavras que o usuário ja chutou
         session["forca_tentativas_restantes"] = 6
 
@@ -89,6 +90,6 @@ def jogar_forca():
 
     # Recebe as letras 
     if request.method == "POST":
-        letra = request.form.get("letra")
+        letra = request.form.get("letra")[0]
 
     return render_template("jogar_forca.html")

@@ -7,13 +7,13 @@
 {% block conteudo %}
     {% include 'navbar.html' %}
     <a href="{{ url_for('jogo_da_forca') }}" class="btn-home">Voltar</a>
-    <h2>Vamos jogar!</h2>
 
     <div class="box-flex">
         <div class="box-ppt">
             <h2>Prepare-se para jogar!</h2>
+            <p>Digite uma letra</p>
             <form action="" method="POST">
-                <input type="text" value="letra">
+                <input type="text" name="letra" id="escolha_num">
                 <button type="submit">Jogar</button>
             </form>
         </div>
